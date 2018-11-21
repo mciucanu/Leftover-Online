@@ -22,12 +22,4 @@ if(mysqli_num_rows($result) > 0){
     echo json_encode(false);
   }
 }
-
-//$result = $conn->query($query);
-//if($result){
-//  $item = $result->fetchAll();
-//  echo json_encode($item);
-//} else {
-//  echo json_encode(false);
-//}
 ?>
