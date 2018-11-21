@@ -15,8 +15,7 @@ $query = "INSERT INTO users (email, username, password) VALUES ('$email', '$user
 
 $result = $conn->query($query);
 if($result){
-  $allowed = $result->fetchAll();
-  echo json_encode($allowed);
+  echo json_encode(true);
 } else {
   echo json_encode(false);
 }
