@@ -18,7 +18,8 @@ $query = "INSERT INTO items (name, added_date, expiry_date, days_left, image_src
 
 $result = $conn->query($query);
 if($result){
-  echo json_encode(true);
+  $itemid = $conn->lastInsertId();
+  echo json_encode($itemid);
 } else {
   echo json_encode(false);
 }
