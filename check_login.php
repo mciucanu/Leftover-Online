@@ -10,13 +10,24 @@ try {
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+$query = "SELECT * FROM users WHERE username='$username'";
 
-$result = $conn->query($query);
-if($result){
-  echo json_encode(true);
-} else {
-  echo json_encode(false);
+$result = mysqli_query($conn, $query);
+if(mysqli_num_rows($result) > 0){
+  $row = mysqli_fetch_assoc($result);
+  $allowed = password_verify($password,$row["password"]);
+  if($allowed){
+    echo json_encode(true);
+  } else {
+    echo json_encode(false);
+  }
 }
 
+//$result = $conn->query($query);
+//if($result){
+//  $item = $result->fetchAll();
+//  echo json_encode($item);
+//} else {
+//  echo json_encode(false);
+//}
 ?>
