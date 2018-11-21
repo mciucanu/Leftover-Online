@@ -12,8 +12,9 @@ $added_date = $_POST['added_date'];
 $expiry_date = $_POST['expiry_date'];
 $days_left = $_POST['days_left'];
 $exact_time = $_POST['exact_time'];
+$image = $_POST['image'];
 
-$query = "INSERT INTO items (name, added_date, expiry_date, days_left, exact_time) VALUES ('$name', '$added_date', '$expiry_date', '$days_left', '$exact_time')";
+$query = "INSERT INTO items (name, added_date, expiry_date, days_left, image, exact_time) VALUES ('$name', '$added_date', '$expiry_date', '$days_left', '$image', '$exact_time')";
 
 $result = $conn->query($query);
 if($result){
