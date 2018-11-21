@@ -16,8 +16,8 @@ $result = $conn->query($query);
 if($result){
   //$row = mysqli_fetch_assoc($result);
   $allowed = $result->fetchAll();
-  echo json_encode($allowed)
+  echo json_encode($allowed);
 } else {
-  echo json_encode(false)
+  echo json_encode(false);
 }
 ?>
