@@ -15,8 +15,8 @@ $query = "SELECT * FROM users WHERE username='$username'";
 $result = mysqli_query($conn, $query);
 if(mysqli_num_rows($result) > 0){
   $row = mysqli_fetch_assoc($result);
-  $allowed = password_verify($password,$row["password"]);
-  if($allowed){
+  $allowed = strcmp($password,$row["password"]);
+  if($allowed==0){
     echo json_encode(true);
   } else {
     echo json_encode(false);
