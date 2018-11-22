@@ -8,8 +8,9 @@ try {
 }
 
 $name = $_POST['name'];
+$user_id = $_POST['user_id'];
 
-$query = "SELECT * FROM shopping_list WHERE name='$name'";
+$query = "SELECT * FROM shopping_list WHERE name='$name' AND user_id='$user_id'";
 
 $result = $conn->query($query);
 
