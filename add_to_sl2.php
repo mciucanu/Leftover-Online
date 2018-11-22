@@ -10,8 +10,9 @@ try {
 $item_id = $_POST['item_id'];
 $name = $_POST['name'];
 $image = $_POST['image'];
+$user_id = $_POST['user_id'];
 
-$query = "INSERT INTO shopping_list (item_id, user_id, name, image) VALUES ('$item_id', 1, '$name', '$image')";
+$query = "INSERT INTO shopping_list (item_id, user_id, name, image) VALUES ('$item_id', '$user_id', '$name', '$image')";
 
 $result = $conn->query($query);
 if($result){
