@@ -8,6 +8,7 @@ try {
 }
 
 $name = $_POST['name'];
+$user_id = $_POST['user_id'];
 
 $query = "INSERT INTO shopping_list (user_id, name, image) VALUES (1, '$name', 'imagesrc')";
 
